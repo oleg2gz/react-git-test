@@ -1,5 +1,3 @@
-import { useContext } from 'react'
-import { DarkThemeContext } from './App'
 import { useTheme, useThemeUpdater } from './DarkThemeContext'
 
 export default function FuncBg() {
