@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { BtnColorContext } from './App'
 
 export default class CounterClass extends Component {
   constructor(props) {
@@ -10,11 +11,19 @@ export default class CounterClass extends Component {
   }
   render() {
     return (
-      <div>
-        <button onClick={() => this.changeCount(-1)}>-</button>
-        <span>{this.state.count}</span>
-        <button onClick={() => this.changeCount(1)}>+</button>
-      </div>
+      <BtnColorContext.Consumer>
+        {(style) => (
+          <div>
+            <button style={style} onClick={() => this.changeCount(-1)}>
+              -
+            </button>
+            <span>{this.state.count}</span>
+            <button style={style} onClick={() => this.changeCount(1)}>
+              +
+            </button>
+          </div>
+        )}
+      </BtnColorContext.Consumer>
     )
   }
 
